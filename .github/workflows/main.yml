@@ -15,5 +15,6 @@ jobs:
       - name: Deploy to Amplify
         run: |
           cd ..
+          ls
           npm i
           npx amplify pipeline-deploy --branch main --app-id du4uq2ds0cs0a
