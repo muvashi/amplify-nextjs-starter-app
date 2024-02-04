@@ -16,6 +16,4 @@ jobs:
         run: |
           cd ..
           npm i
-          npm install -g @aws-amplify/cli@12
-          export CI=1
           npx amplify pipeline-deploy --branch main --app-id du4uq2ds0cs0a
