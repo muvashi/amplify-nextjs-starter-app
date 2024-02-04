@@ -10,7 +10,7 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: export CI=1
       - run: pwd
-      - run: cd ..
+      - run: cd /home/runner/work/amplify-nextjs-starter-app
       - run: pwd
       - run: npm i
       - run: npx amplify pipeline-deploy --branch main --app-id du4uq2ds0cs0a
