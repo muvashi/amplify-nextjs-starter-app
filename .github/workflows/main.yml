@@ -5,16 +5,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      # - run: cd ..
-      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      # - run: npm i
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - name: Deploy to Amplify
         run: |
-          
-          pwd
-          ls
-          pwd
-          npm i
+          npm ci
+          npm install -g @aws-amplify/cli@12
+          export CI=1
           npx amplify pipeline-deploy --branch main --app-id du4uq2ds0cs0a
